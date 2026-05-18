@@ -1,0 +1,1036 @@
+/* ProjectDetails.css - High Fidelity Prototype Styles */
+
+.project-details-page {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(180deg, #180202 0%, #2c0302 50%, #150201 100%);
+  color: #fff;
+  padding: 40px 0 80px 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  z-index: 1;
+}
+
+/* Background Glowing Orbs */
+.details-bg-glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(120px);
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.25;
+}
+
+.glow-1 {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(255, 79, 79, 0.4) 0%, transparent 70%);
+  top: 10%;
+  right: -100px;
+}
+
+.glow-2 {
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(255, 79, 79, 0.35) 0%, transparent 70%);
+  bottom: 5%;
+  left: -200px;
+}
+
+/* Header */
+.details-header {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+  z-index: 2;
+  position: relative;
+}
+
+.back-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 15px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  padding: 10px 18px;
+  background: rgba(255, 79, 79, 0.05);
+  border: 1px solid rgba(255, 79, 79, 0.12);
+  border-radius: 30px;
+  backdrop-filter: blur(10px);
+}
+
+.back-link:hover {
+  color: var(--accentColor);
+  border-color: rgba(255, 79, 79, 0.4);
+  background: rgba(255, 79, 79, 0.12);
+  transform: translateX(-5px);
+  box-shadow: 0 0 15px rgba(255, 79, 79, 0.15);
+}
+
+.project-number-badge {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--accentColor);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 79, 79, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 79, 79, 0.08);
+  box-shadow: 0 0 10px rgba(255, 79, 79, 0.2);
+}
+
+/* Three-Column Layout */
+.details-main-grid {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 40px;
+  display: grid;
+  grid-template-columns: 320px 1fr 340px;
+  gap: 40px;
+  align-items: start;
+  z-index: 2;
+  position: relative;
+}
+
+/* Bento details panels */
+.details-panel {
+  background: linear-gradient(135deg, rgba(255, 79, 79, 0.05) 0%, rgba(255, 79, 79, 0.01) 100%);
+  border: 1px solid rgba(255, 79, 79, 0.12);
+  border-radius: 24px;
+  padding: 30px;
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.panel-title {
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin: 0 0 10px 0;
+  color: #fff;
+}
+
+.panel-desc {
+  font-size: 13px;
+  color: rgba(255, 211, 205, 0.6);
+  line-height: 1.5;
+  margin: 0 0 25px 0;
+}
+
+/* Left Column: UI Directory list */
+.flow-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-height: 380px;
+  overflow-y: auto;
+  padding-right: 8px;
+  margin-bottom: 25px;
+}
+
+.flow-list::-webkit-scrollbar {
+  width: 4px;
+}
+
+.flow-list::-webkit-scrollbar-thumb {
+  background: rgba(255, 79, 79, 0.2);
+  border-radius: 4px;
+}
+
+.flow-list-item {
+  display: flex;
+  align-items: start;
+  gap: 12px;
+  background: rgba(255, 79, 79, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: 12px;
+  padding: 12px 16px;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  width: 100%;
+}
+
+.flow-bullet {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  margin-top: 6px;
+  flex-shrink: 0;
+  transition: background 0.3s ease;
+}
+
+.flow-item-content h4 {
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0;
+  transition: color 0.3s ease;
+}
+
+.flow-item-content p {
+  font-size: 11px;
+  color: rgba(255, 211, 205, 0.5);
+  margin: 6px 0 0 0;
+  line-height: 1.4;
+}
+
+/* Active Directory Item states */
+.flow-list-item.active {
+  background: rgba(255, 79, 79, 0.08);
+  border-color: rgba(255, 79, 79, 0.25);
+  transform: translateX(4px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.flow-list-item.active .flow-bullet {
+  background: var(--accentColor);
+  box-shadow: 0 0 8px var(--accentColor);
+}
+
+.flow-list-item.active .flow-item-content h4 {
+  color: #fff;
+}
+
+/* Directory Toolbars */
+.prototype-toolbar {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.toolbar-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 12px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  border: 1px solid rgba(255, 79, 79, 0.12);
+  background: rgba(255, 79, 79, 0.04);
+  color: #fff;
+}
+
+.play-btn:hover {
+  background: var(--accentColor);
+  color: #000;
+  border-color: transparent;
+  box-shadow: 0 0 15px rgba(255, 79, 79, 0.4);
+}
+
+.play-btn.playing {
+  background: rgba(255, 79, 79, 0.15);
+  border-color: var(--accentColor);
+  color: var(--accentColor);
+}
+
+.hotspot-toggle:hover {
+  background: rgba(255, 79, 79, 0.08);
+  border-color: rgba(255, 79, 79, 0.3);
+}
+
+.hotspot-toggle.active {
+  color: var(--accentColor);
+  border-color: rgba(255, 79, 79, 0.3);
+  background: rgba(255, 79, 79, 0.06);
+}
+
+/* Chat Simulator configurations */
+.chat-join-form h4 {
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.6);
+  letter-spacing: 0.5px;
+  margin: 0 0 12px 0;
+}
+
+.chat-username-input {
+  width: 100%;
+  padding: 12px 16px;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 79, 79, 0.15);
+  border-radius: 12px;
+  color: #fff;
+  font-size: 14px;
+  box-sizing: border-box;
+  margin-bottom: 12px;
+  transition: all 0.3s ease;
+}
+
+.chat-username-input:focus {
+  border-color: var(--accentColor);
+  outline: none;
+  box-shadow: 0 0 8px rgba(255, 79, 79, 0.25);
+}
+
+.join-btn {
+  width: 100%;
+  padding: 12px;
+  background: var(--accentColor);
+  color: #000;
+  font-weight: 600;
+  font-size: 14px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.join-btn:hover {
+  box-shadow: 0 0 15px rgba(255, 79, 79, 0.5);
+  transform: translateY(-2px);
+}
+
+.active-network-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.network-status {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.status-indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.status-indicator.online {
+  background: #39d353;
+  box-shadow: 0 0 8px #39d353;
+}
+
+.network-status p {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0;
+}
+
+.room-selector-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.room-select-btn {
+  text-align: left;
+  padding: 10px 14px;
+  background: rgba(255, 79, 79, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: 10px;
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.room-select-btn.active {
+  background: rgba(255, 79, 79, 0.08);
+  border-color: rgba(255, 79, 79, 0.2);
+  color: var(--accentColor);
+  font-weight: 600;
+  transform: translateX(4px);
+}
+
+.disconnect-btn {
+  width: 100%;
+  padding: 10px;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+}
+
+.disconnect-btn:hover {
+  background: rgba(255, 0, 0, 0.1);
+  border-color: rgba(255, 0, 0, 0.2);
+  color: #ff4f4f;
+}
+
+/* MIDDLE COLUMN: IPHONE 15 PRO FRAME DESIGN */
+.iphone-column {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.iphone-mockup-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+/* Phone Chassis */
+.iphone-15-pro-frame {
+  position: relative;
+  width: 320px;
+  height: 650px;
+  border-radius: 46px;
+  background: #141416;
+  box-shadow: 
+    0 25px 50px -12px rgba(0, 0, 0, 0.7),
+    0 35px 80px rgba(0, 0, 0, 0.8),
+    inset 0 0 3px 2px rgba(255, 255, 255, 0.08);
+  border: 10px solid #222225;
+  box-sizing: border-box;
+  overflow: visible;
+}
+
+/* Reflective polished steel border */
+.steel-border {
+  position: absolute;
+  top: -11px;
+  left: -11px;
+  right: -11px;
+  bottom: -11px;
+  border-radius: 47px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  pointer-events: none;
+  z-index: 10;
+}
+
+/* Speaker Notch */
+.speaker-grill {
+  position: absolute;
+  top: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 3px;
+  border-radius: 2px;
+  background: #000;
+  z-index: 11;
+}
+
+/* Dynamic Island Capsule */
+.dynamic-island {
+  position: absolute;
+  top: 11px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 82px;
+  height: 25px;
+  border-radius: 12.5px;
+  background: #000;
+  z-index: 9;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 12px;
+  box-sizing: border-box;
+}
+
+.camera-lens {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #0e1e38 0%, #030814 80%);
+  box-shadow: inset 0 0 2px rgba(255, 255, 255, 0.3);
+  display: inline-block;
+}
+
+/* Side physical chassis buttons */
+.side-button {
+  position: absolute;
+  background: #252528;
+  border-radius: 2px;
+  z-index: -1;
+  box-shadow: -2px 0 4px rgba(0,0,0,0.4);
+}
+
+.action-btn { top: 90px; left: -13px; width: 3px; height: 18px; }
+.vol-up { top: 125px; left: -13px; width: 3px; height: 35px; }
+.vol-down { top: 172px; left: -13px; width: 3px; height: 35px; }
+.power-btn { top: 145px; right: -13px; width: 3px; height: 48px; box-shadow: 2px 0 4px rgba(0,0,0,0.4); }
+
+/* Inner Screen panel */
+.iphone-screen {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 36px;
+  overflow: hidden;
+  background: #0c0202;
+  box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.9);
+}
+
+.iphone-screen::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0) 50%, rgba(0,0,0,0.1) 100%);
+  pointer-events: none;
+  z-index: 8;
+}
+
+/* Images screens viewer */
+.prototype-viewer-screen {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.prototype-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  user-select: none;
+}
+
+/* Hotspots overlay markers */
+.hotspot-pulse-marker {
+  position: absolute;
+  background: rgba(255, 79, 79, 0.05);
+  border: 1px solid rgba(255, 79, 79, 0.45);
+  border-radius: 8px;
+  cursor: pointer;
+  padding: 0;
+  z-index: 5;
+  outline: none;
+  animation: hotspot-pulse 1.8s infinite cubic-bezier(0.4, 0, 0.6, 1);
+  box-sizing: border-box;
+}
+
+.hotspot-pulse-marker:hover {
+  background: rgba(255, 79, 79, 0.15);
+  border-color: var(--accentColor);
+}
+
+@keyframes hotspot-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 79, 79, 0.5);
+  }
+  70% {
+    box-shadow: 0 0 0 8px rgba(255, 79, 79, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 79, 79, 0);
+  }
+}
+
+/* Under-phone arrow controls */
+.figma-arrow-controls {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: rgba(255, 79, 79, 0.04);
+  border: 1px solid rgba(255, 79, 79, 0.12);
+  padding: 8px 16px;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+}
+
+.control-arrow-btn {
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+  padding: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  font-size: 13px;
+}
+
+.control-arrow-btn:hover {
+  color: var(--accentColor);
+  transform: scale(1.15);
+}
+
+.controls-page-indicator {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: rgba(255, 255, 255, 0.55);
+  min-width: 45px;
+  text-align: center;
+}
+
+/* Chat Simulator view styles inside iPhone */
+.live-chat-simulator {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  background: #110101;
+  padding-top: 40px; /* offset Dynamic Island */
+  box-sizing: border-box;
+}
+
+.app-bar {
+  background: rgba(255, 79, 79, 0.06);
+  border-bottom: 1px solid rgba(255, 79, 79, 0.12);
+  padding: 12px 16px;
+}
+
+.app-bar-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.app-status {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #39d353;
+  box-shadow: 0 0 6px #39d353;
+}
+
+.app-bar-info h4 {
+  font-size: 14px;
+  margin: 0 0 2px 0;
+  color: #fff;
+  font-weight: 600;
+}
+
+.app-bar-info p {
+  font-size: 11px;
+  color: rgba(255, 211, 205, 0.5);
+  margin: 0;
+}
+
+.app-welcome-view {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  text-align: center;
+}
+
+.app-logo {
+  font-size: 40px;
+  margin-bottom: 15px;
+  animation: logo-bounce 2s infinite ease-in-out;
+}
+
+@keyframes logo-bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.app-welcome-view h3 {
+  font-size: 18px;
+  margin: 0 0 10px 0;
+  color: #fff;
+  font-weight: 600;
+}
+
+.app-welcome-view p {
+  font-size: 12px;
+  color: rgba(255, 211, 205, 0.6);
+  line-height: 1.5;
+  margin: 0 0 24px 0;
+}
+
+.mock-input-wrap {
+  display: flex;
+  gap: 8px;
+  width: 100%;
+}
+
+.mock-input-wrap input {
+  flex: 1;
+  background: rgba(0,0,0,0.4);
+  border: 1px solid rgba(255, 79, 79, 0.15);
+  border-radius: 8px;
+  color: #fff;
+  padding: 8px 12px;
+  font-size: 13px;
+}
+
+.mock-input-wrap button {
+  background: var(--accentColor);
+  color: #000;
+  font-weight: 600;
+  border-radius: 8px;
+  padding: 8px 16px;
+  border: none;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.app-chat-view {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.app-message-list {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.mock-msg-wrapper {
+  display: flex;
+  flex-direction: column;
+  max-width: 75%;
+}
+
+.mock-msg-wrapper.user {
+  align-self: flex-end;
+  align-items: flex-end;
+}
+
+.mock-msg-wrapper.bot {
+  align-self: flex-start;
+  align-items: flex-start;
+}
+
+.msg-sender {
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.4);
+  margin-bottom: 4px;
+}
+
+.msg-bubble {
+  padding: 10px 14px;
+  border-radius: 14px;
+  font-size: 13px;
+  line-height: 1.4;
+  word-break: break-word;
+}
+
+.user .msg-bubble {
+  background: var(--accentColor);
+  color: #000;
+  border-bottom-right-radius: 2px;
+}
+
+.bot .msg-bubble {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  color: #fff;
+  border-bottom-left-radius: 2px;
+}
+
+.app-input-bar {
+  display: flex;
+  gap: 8px;
+  padding: 12px;
+  background: rgba(0, 0, 0, 0.4);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.app-input-bar input {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #fff;
+  border-radius: 20px;
+  padding: 8px 16px;
+  font-size: 13px;
+}
+
+.app-input-bar input:focus {
+  outline: none;
+  border-color: rgba(255, 79, 79, 0.4);
+}
+
+.app-input-bar button {
+  background: var(--accentColor);
+  color: #000;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+.app-input-bar button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 10px rgba(255, 79, 79, 0.3);
+}
+
+/* Typing bubble dots animation */
+.typing-bubble {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  padding: 10px 18px !important;
+}
+
+.typing-bubble span {
+  width: 6px;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 50%;
+  display: inline-block;
+  animation: typing-dot 1.4s infinite ease-in-out;
+}
+
+.typing-bubble span:nth-child(2) { animation-delay: 0.2s; }
+.typing-bubble span:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes typing-dot {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+/* RIGHT COLUMN: PROJECT DETAILS PANEL */
+.info-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.info-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.project-category-tag {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--accentColor);
+  background: rgba(255, 79, 79, 0.08);
+  border: 1px solid rgba(255, 79, 79, 0.2);
+  padding: 6px 12px;
+  border-radius: 20px;
+  margin-bottom: 12px;
+}
+
+.info-header h2 {
+  font-size: 26px;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 0 0 16px 0;
+  color: #fff;
+  line-height: 1.2;
+}
+
+.info-divider {
+  width: 40px;
+  height: 2px;
+  background: var(--accentColor);
+  border-radius: 2px;
+}
+
+.project-full-desc {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.project-feature-section h4,
+.project-utility-metrics h4 {
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.75px;
+  color: rgba(255, 255, 255, 0.45);
+  margin: 0 0 14px 0;
+}
+
+.tech-badge-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tech-pill-badge {
+  font-size: 12px;
+  font-weight: 500;
+  padding: 6px 12px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 8px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.metrics-checklist {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.metrics-checklist li {
+  display: flex;
+  align-items: start;
+  gap: 12px;
+}
+
+.bullet-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: rgba(255, 79, 79, 0.08);
+  border: 1px solid rgba(255, 79, 79, 0.2);
+  color: var(--accentColor);
+  font-size: 11px;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.metrics-checklist p {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.65);
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* Explore Source Button card */
+.project-action-card {
+  background: rgba(255, 79, 79, 0.03);
+  border: 1px solid rgba(255, 79, 79, 0.15);
+  border-radius: 16px;
+  padding: 20px;
+}
+
+.project-action-card h4 {
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0 0 6px 0;
+  color: #fff;
+}
+
+.project-action-card p {
+  font-size: 12px;
+  color: rgba(255, 211, 205, 0.55);
+  line-height: 1.5;
+  margin: 0 0 16px 0;
+}
+
+.github-explore-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 12px;
+  background: var(--accentColor);
+  color: #000;
+  font-weight: 600;
+  font-size: 14px;
+  border-radius: 12px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255, 79, 79, 0.2);
+}
+
+.github-explore-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 79, 79, 0.4);
+}
+
+/* RESPONSIVE DESIGN STYLES */
+@media screen and (max-width: 1200px) {
+  .details-main-grid {
+    grid-template-columns: 280px 1fr 300px;
+    gap: 24px;
+    padding: 0 24px;
+  }
+  
+  .details-panel {
+    padding: 20px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .details-main-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  
+  .iphone-column {
+    order: -1; /* render phone mockup first on mobile/tablet */
+  }
+  
+  .flow-list {
+    max-height: 280px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .details-header {
+    padding: 0 20px;
+    margin-bottom: 24px;
+  }
+  
+  .details-main-grid {
+    padding: 0 20px;
+  }
+  
+  .iphone-15-pro-frame {
+    width: 290px;
+    height: 590px;
+    border-radius: 40px;
+  }
+  
+  .dynamic-island {
+    width: 74px;
+    height: 22px;
+  }
+  
+  .live-chat-simulator {
+    padding-top: 36px;
+  }
+  
+  .info-header h2 {
+    font-size: 22px;
+  }
+}

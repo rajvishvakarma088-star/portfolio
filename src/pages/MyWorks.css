@@ -1,0 +1,205 @@
+.myworks-page {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 8% 18%, rgba(255, 79, 79, 0.12) 0%, transparent 40%),
+    radial-gradient(circle at 86% 72%, rgba(255, 79, 79, 0.06) 0%, transparent 46%),
+    linear-gradient(180deg, #180202 0%, #250302 100%);
+  padding: 80px 40px;
+  box-sizing: border-box;
+}
+
+.myworks-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.back-button {
+  display: inline-block;
+  color: var(--accentColor);
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 500;
+  margin-bottom: 30px;
+  transition: all 0.3s ease;
+  padding: 8px 20px;
+  border: 1px solid var(--lineColor);
+  border-radius: 30px;
+  background: rgba(255, 79, 79, 0.04);
+}
+
+.back-button:hover {
+  background: var(--accentColor);
+  color: #000;
+  border-color: transparent;
+  box-shadow: 0 0 20px rgba(255, 79, 79, 0.35);
+}
+
+.myworks-header h1 {
+  font-size: 65px;
+  font-weight: 300;
+  margin-bottom: 15px;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.myworks-header h1 span {
+  color: var(--accentColor);
+  text-shadow: 0 0 20px rgba(255, 79, 79, 0.25);
+  font-weight: 500;
+}
+
+.myworks-header p {
+  font-size: 17px;
+  color: rgba(255, 211, 205, 0.6);
+}
+
+/* Frameless Grid */
+.myworks-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  gap: 40px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Frameless Showcase Item */
+.myworks-item {
+  background: transparent;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: transform 0.35s ease;
+}
+
+/* Float Badge Number */
+.myworks-number {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  font-size: 12px;
+  color: var(--accentColor);
+  font-weight: 600;
+  background: rgba(7, 1, 1, 0.85);
+  padding: 4px 12px;
+  border: 1px solid var(--lineColor);
+  border-radius: 20px;
+  z-index: 2;
+  letter-spacing: 0.5px;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+.myworks-image-wrap {
+  width: 100%;
+  height: 240px;
+  overflow: hidden;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 79, 79, 0.12);
+  background: rgba(255, 79, 79, 0.02);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  position: relative;
+}
+
+.myworks-item:hover .myworks-image-wrap {
+  transform: translateY(-8px);
+  border-color: rgba(255, 79, 79, 0.45);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 25px rgba(255, 79, 79, 0.18);
+}
+
+.myworks-image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.myworks-item:hover .myworks-image-wrap img {
+  transform: scale(1.05);
+}
+
+/* Text details below the image wrap */
+.myworks-info-wrap {
+  padding: 20px 8px 10px 8px;
+}
+
+.myworks-info-wrap h3 {
+  font-size: 22px;
+  font-weight: 500;
+  margin: 0 0 6px 0;
+  color: #fff;
+  transition: color 0.3s ease;
+  letter-spacing: 0.25px;
+}
+
+.myworks-item:hover .myworks-info-wrap h3 {
+  color: var(--accentColor);
+}
+
+.myworks-category {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.75px;
+  text-transform: uppercase;
+  color: var(--accentColor);
+  margin-bottom: 12px;
+}
+
+.myworks-description {
+  font-size: 14px;
+  color: rgba(255, 211, 205, 0.65);
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.myworks-tech {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.45);
+  line-height: 1.5;
+}
+
+.myworks-link {
+  display: inline-flex;
+  margin-top: 16px;
+  color: var(--accentColor);
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.myworks-link:hover {
+  color: #fff;
+  border-color: #fff;
+  text-shadow: 0 0 10px rgba(255, 79, 79, 0.5);
+}
+
+/* Responsive */
+@media only screen and (max-width: 992px) {
+  .myworks-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .myworks-page {
+    padding: 60px 20px;
+  }
+
+  .myworks-header h1 {
+    font-size: 45px;
+  }
+
+  .myworks-grid {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+  }
+  
+  .myworks-image-wrap {
+    height: 220px;
+  }
+}

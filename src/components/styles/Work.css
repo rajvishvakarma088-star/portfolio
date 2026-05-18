@@ -1,0 +1,569 @@
+.work-section h2 {
+  margin-top: 100px;
+  font-size: 70px;
+  font-weight: 500;
+}
+
+.work-section h2>span {
+  color: var(--accentColor);
+}
+
+.work-section {
+  transition: 0s;
+  height: 100vh;
+  box-sizing: border-box;
+  will-change: transform;
+  background:
+    radial-gradient(circle at 12% 28%, rgba(255, 79, 79, 0.22) 0%, transparent 42%),
+    radial-gradient(circle at 82% 72%, rgba(255, 79, 79, 0.06) 0%, transparent 48%),
+    linear-gradient(180deg, #180202 0%, #250302 100%); /* Slightly lighter wine-red/maroon gradient */
+}
+
+.work-container {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  align-content: stretch;
+}
+
+.work-flex {
+  width: 100%;
+  display: flex;
+  height: 100%;
+  margin-left: -80px;
+  padding-right: 120px;
+  position: relative;
+}
+
+/* Glassmorphic Project Box - Lighter and styled transparent using theme color! */
+.work-box {
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  width: 600px;
+  box-sizing: border-box;
+  border: 1px solid rgba(255, 79, 79, 0.12);
+  border-radius: 16px;
+  background: linear-gradient(135deg, rgba(255, 79, 79, 0.06) 0%, rgba(255, 79, 79, 0.02) 100%);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(18px) saturate(130%);
+  -webkit-backdrop-filter: blur(18px) saturate(130%);
+  flex-shrink: 0;
+  gap: 24px;
+  justify-content: space-between;
+  margin: 28px 16px;
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease, background 0.35s ease;
+}
+
+.work-box:hover {
+  transform: translateY(-10px);
+  border-color: rgba(255, 79, 79, 0.48);
+  background: rgba(255, 79, 79, 0.08); /* Slightly lighter on hover */
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4), 0 0 30px rgba(255, 79, 79, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.work-flex .work-box:nth-child(even) {
+  flex-direction: column-reverse;
+}
+
+.work-flex::before,
+.work-flex::after {
+  content: "";
+  width: calc(50000vw);
+  height: 1px;
+  background-color: var(--lineColor);
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+}
+
+.work-flex::after {
+  top: 100%;
+}
+
+.work-title {
+  justify-content: space-between;
+  display: flex;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.work-title>div {
+  text-align: right;
+}
+
+.work-title h3 {
+  font-size: 50px;
+  line-height: 50px;
+  margin: 0;
+  font-weight: 600;
+}
+
+.work-info h4 {
+  font-size: 26px;
+  font-weight: 500;
+  margin: 0;
+}
+
+.work-info p {
+  font-weight: 200;
+  color: #adacac;
+  margin: 0;
+  margin-top: 3px;
+}
+
+.work-info>p {
+  width: 90%;
+}
+
+.work-image {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.work-image-in {
+  position: relative;
+}
+
+.work-link {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background: rgba(7, 1, 1, 0.82);
+  width: 50px;
+  border-radius: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+  border: 1px solid var(--lineColor);
+  box-shadow: var(--cardShadow);
+  transition: 0.3s;
+  opacity: 0;
+}
+
+.work-image a:hover {
+  color: inherit;
+}
+
+.work-image a:hover .work-link {
+  opacity: 1;
+}
+
+.work-image video {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: #000;
+  object-fit: cover;
+}
+
+.work-image img {
+  max-width: 100%;
+  max-height: 350px;
+}
+
+@media only screen and (max-height: 900px) {
+  .work-image img {
+    max-height: 250px;
+  }
+
+  .work-box {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  .work-section h2 {
+    font-size: 60px;
+    margin-bottom: 30px;
+    margin-top: 70px;
+  }
+}
+
+@media only screen and (max-width: 1400px) {
+  .work-title h3 {
+    font-size: 35px;
+  }
+
+  .work-info p {
+    font-size: 13px;
+  }
+
+  .work-info h4 {
+    font-size: 15px;
+  }
+
+  .work-box {
+    width: 450px;
+    padding: 50px;
+  }
+
+  .work-flex {
+    margin-left: -50px;
+    padding-right: 75px;
+  }
+
+  .work-section h2 {
+    font-size: 50px;
+  }
+}
+
+@media only screen and (max-width: 1400px) {
+  .work-box {
+    width: 350px;
+    padding: 30px;
+  }
+
+  .work-flex {
+    margin-left: -30px;
+    padding-right: 45px;
+  }
+}
+
+@media only screen and (max-height: 650px) {
+  .work-image img {
+    max-height: 200px;
+  }
+
+  .work-section h2 {
+    font-size: 40px;
+    margin-bottom: 20px;
+  }
+
+  .work-box {
+    gap: 20px;
+  }
+}
+
+@media only screen and (max-width: 1025px) {
+  .work-container {
+    align-content: normal;
+  }
+
+  .work-flex {
+    height: auto;
+  }
+}
+
+/* See All Works CTA Box */
+.work-box-cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-right: none;
+}
+
+.see-all-works {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.see-all-works h3 {
+  font-size: 32px;
+  font-weight: 500;
+  color: #fff;
+}
+
+.see-all-works p {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.6);
+  max-width: 250px;
+}
+
+.see-all-btn {
+  display: inline-block;
+  padding: 15px 35px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #000;
+  background: var(--accentColor);
+  border-radius: 30px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+}
+
+.see-all-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 30px rgba(255, 79, 79, 0.4);
+}
+
+/* Mobile: Support fluid horizontal ScrollTrigger pinning on touch screens */
+@media only screen and (max-width: 768px) {
+  .work-section {
+    height: 100vh;
+    min-height: 100vh;
+  }
+
+  .work-flex {
+    flex-direction: row !important;
+    margin-left: -20px;
+    padding-right: 40px;
+    gap: 16px;
+  }
+
+  .work-box {
+    width: 290px; /* Perfect card dimension for mobile touch viewports */
+    max-width: 85vw;
+    padding: 24px;
+    border-radius: 16px;
+    margin: 16px 8px;
+    gap: 16px;
+    border-right: 1px solid rgba(255, 79, 79, 0.12);
+    border-bottom: 1px solid rgba(255, 79, 79, 0.12);
+  }
+
+  .work-flex .work-box:nth-child(even) {
+    flex-direction: column;
+  }
+
+  .work-section h2 {
+    font-size: 36px;
+    margin-top: 60px;
+    margin-bottom: 10px;
+  }
+
+  .work-title h3 {
+    font-size: 26px;
+    line-height: 30px;
+  }
+
+  .work-info h4 {
+    font-size: 16px;
+  }
+
+  .work-image img {
+    max-height: 180px;
+  }
+
+  .work-box-cta {
+    padding: 24px;
+    border-bottom: 1px solid rgba(255, 79, 79, 0.12);
+  }
+
+  .see-all-works h3 {
+    font-size: 20px;
+  }
+
+  .see-all-works p {
+    font-size: 13px;
+  }
+}
+
+/* Mini iPhone Mockup card framing styles */
+.mini-iphone-mockup {
+  position: relative;
+  width: 150px;
+  height: 300px;
+  border-radius: 22px;
+  background: #141416;
+  border: 5px solid #222225;
+  box-shadow: 
+    0 15px 30px rgba(0, 0, 0, 0.5),
+    inset 0 0 2px 1px rgba(255, 255, 255, 0.08);
+  box-sizing: border-box;
+  overflow: hidden;
+  margin: 0 auto;
+  transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.mini-iphone-mockup:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 
+    0 20px 40px rgba(255, 79, 79, 0.2),
+    0 25px 50px rgba(0, 0, 0, 0.6);
+}
+
+.mini-speaker {
+  position: absolute;
+  top: 3px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 25px;
+  height: 2px;
+  border-radius: 1px;
+  background: #000;
+  z-index: 10;
+}
+
+.mini-dynamic-island {
+  position: absolute;
+  top: 7px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 45px;
+  height: 12px;
+  border-radius: 6px;
+  background: #000;
+  z-index: 9;
+}
+
+.mini-screen {
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #000;
+  position: relative;
+}
+
+.mini-screen img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  max-height: 100% !important;
+}
+
+/* Adjustments for myworks page */
+.myworks-image-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+}
+
+@media only screen and (max-width: 768px) {
+  .mini-iphone-mockup {
+    width: 135px;
+    height: 270px;
+    border-radius: 20px;
+  }
+  .mini-dynamic-island {
+    width: 35px;
+    height: 9px;
+  }
+}
+
+/* Overlapping Mockup Cluster Styles */
+.mockup-cluster-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding-bottom: 20px;
+  overflow: visible;
+}
+
+.mockup-cluster {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 320px;
+  height: 320px;
+}
+
+.mockup-cluster .mini-iphone-mockup {
+  position: absolute;
+  transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+}
+
+/* Left back mockup */
+.mockup-cluster .mockup-1 {
+  transform: scale(0.8) translateX(-85px) rotate(-8deg);
+  z-index: 1;
+  opacity: 0.6;
+}
+
+/* Center front mockup */
+.mockup-cluster .mockup-2 {
+  transform: scale(1) translateZ(0);
+  z-index: 3;
+  opacity: 1;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7);
+}
+
+/* Right back mockup */
+.mockup-cluster .mockup-3 {
+  transform: scale(0.8) translateX(85px) rotate(8deg);
+  z-index: 2;
+  opacity: 0.6;
+}
+
+/* Fan-out on card hover */
+.work-box:hover .mockup-cluster .mockup-1 {
+  transform: scale(0.85) translateX(-110px) rotate(-12deg);
+  opacity: 0.8;
+}
+
+.work-box:hover .mockup-cluster .mockup-2 {
+  transform: scale(1.05) translateY(-5px);
+  box-shadow: 
+    0 20px 45px rgba(255, 79, 79, 0.25),
+    0 25px 50px rgba(0, 0, 0, 0.8);
+}
+
+.work-box:hover .mockup-cluster .mockup-3 {
+  transform: scale(0.85) translateX(110px) rotate(12deg);
+  opacity: 0.8;
+}
+
+/* Also apply fan-out when hovering directly over works grid cards */
+.myworks-item:hover .mockup-cluster .mockup-1 {
+  transform: scale(0.85) translateX(-110px) rotate(-12deg);
+  opacity: 0.8;
+}
+
+.myworks-item:hover .mockup-cluster .mockup-2 {
+  transform: scale(1.05) translateY(-5px);
+  box-shadow: 
+    0 20px 45px rgba(255, 79, 79, 0.25),
+    0 25px 50px rgba(0, 0, 0, 0.8);
+}
+
+.myworks-item:hover .mockup-cluster .mockup-3 {
+  transform: scale(0.85) translateX(110px) rotate(12deg);
+  opacity: 0.8;
+}
+
+/* Mobile Responsiveness for Cluster */
+@media only screen and (max-width: 768px) {
+  .mockup-cluster {
+    width: 240px;
+    height: 240px;
+  }
+  
+  .mockup-cluster .mini-iphone-mockup {
+    width: 110px !important;
+    height: 220px !important;
+    border-radius: 16px !important;
+  }
+
+  .mockup-cluster .mini-dynamic-island {
+    width: 30px;
+    height: 8px;
+  }
+  
+  .mockup-cluster .mockup-1 {
+    transform: scale(0.8) translateX(-60px) rotate(-8deg);
+  }
+  
+  .mockup-cluster .mockup-2 {
+    transform: scale(1) translateZ(0);
+  }
+  
+  .mockup-cluster .mockup-3 {
+    transform: scale(0.8) translateX(60px) rotate(8deg);
+  }
+
+  .work-box:hover .mockup-cluster .mockup-1 {
+    transform: scale(0.85) translateX(-75px) rotate(-12deg);
+  }
+  
+  .work-box:hover .mockup-cluster .mockup-3 {
+    transform: scale(0.85) translateX(75px) rotate(12deg);
+  }
+}
+
+

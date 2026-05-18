@@ -1,0 +1,217 @@
+@import url("https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap");
+
+:root {
+  font-family: "Geist", sans-serif;
+
+  font-optical-sizing: auto;
+  font-style: normal;
+  line-height: 1.5;
+  scroll-behavior: smooth;
+  color-scheme: light dark;
+  color: #ffe8e4;
+  background-color: var(--backgroundColor);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  --accentColor: #ff4f4f;
+  --backgroundColor: #160100;
+  --deepColor: #070101;
+  --darkMaroon: #250200;
+  --warmAccent: #ff4f4f;
+  --hotAccent: #ff2f3b;
+  --redAccent: #6b0800;
+  --surfaceColor: rgba(19, 2, 1, 0.78);
+  --surfaceElevated: rgba(35, 5, 4, 0.82);
+  --lineColor: rgba(255, 211, 205, 0.14);
+  --cardShadow: 0 22px 55px rgba(0, 0, 0, 0.42), 0 1px 0 rgba(255, 255, 255, 0.05) inset;
+  --cardShadowHover: 0 34px 80px rgba(0, 0, 0, 0.52), 0 0 0 1px rgba(255, 79, 79, 0.25), 0 1px 0 rgba(255, 255, 255, 0.08) inset;
+  --vh: 100vh;
+  --vh: 100svh;
+  /* Premium Golden Touch Design System */
+  --goldColor: #D4AF37;
+  --goldGradient: linear-gradient(135deg, #BF953F 0%, #FCF6BA 25%, #B38728 50%, #FBF5B7 75%, #AA771C 100%);
+  --goldGlow: 0 0 25px rgba(212, 175, 55, 0.25);
+  --goldLineColor: rgba(212, 175, 55, 0.2);
+  --goldSurfaceColor: rgba(20, 16, 10, 0.82);
+  --goldTextGlow: 0 0 10px rgba(254, 246, 186, 0.5);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Geist", sans-serif;
+}
+
+body {
+  overflow: hidden;
+}
+
+/* Allow scrolling on mobile */
+@media only screen and (max-width: 768px) {
+  body {
+    overflow: auto !important;
+    height: auto !important;
+    min-height: 100vh !important;
+    touch-action: manipulation;
+  }
+
+  html {
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+    touch-action: manipulation;
+  }
+
+  /* Ensure no fixed elements block scrolling */
+  .container-main {
+    position: static !important;
+    height: auto !important;
+  }
+}
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+a:hover {
+  color: var(--accentColor);
+}
+
+main {
+  opacity: 1;
+  transition: 0.3s;
+}
+
+.main-active {
+  opacity: 0;
+  animation: fadeIn 1s 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeIn {
+  100% {
+    opacity: 1;
+  }
+}
+
+body {
+  margin: 0;
+  height: auto;
+  background:
+    radial-gradient(circle at 5% 38%, rgba(255, 79, 79, 0.58) 0%, rgba(255, 47, 59, 0.3) 18%, transparent 42%),
+    radial-gradient(circle at 78% 72%, rgba(107, 8, 0, 0.58) 0%, rgba(255, 79, 79, 0.18) 26%, transparent 55%),
+    linear-gradient(180deg, #070101 0%, #160100 46%, #260300 100%);
+  background-color: var(--backgroundColor);
+  flex-grow: 1;
+  --cWidth: calc(100% - 30px);
+  --cMaxWidth: 1920px;
+  max-width: 100vw;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
+.main-body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
+.container-main {
+  width: 100%;
+  margin: auto;
+  position: relative;
+  background:
+    radial-gradient(circle at 2% 18%, rgba(255, 79, 79, 0.24) 0%, transparent 32%),
+    radial-gradient(circle at 94% 35%, rgba(107, 8, 0, 0.3) 0%, transparent 38%);
+}
+
+.container1 {
+  width: var(--cWidth);
+  height: var(--vh);
+  margin: auto;
+  position: relative;
+}
+
+.split-line {
+  overflow: hidden;
+}
+
+.split-h2 {
+  overflow: hidden;
+  display: flex;
+  white-space: nowrap;
+  flex-wrap: nowrap;
+}
+
+.techstack {
+  width: 100%;
+  position: relative;
+  height: var(--vh);
+  min-height: 100vh;
+  margin: 0 auto;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 150px;
+  padding-bottom: 150px;
+  background:
+    radial-gradient(circle at 12% 50%, rgba(255, 79, 79, 0.18) 0%, transparent 46%),
+    linear-gradient(180deg, rgba(22, 1, 0, 0.96) 0%, rgba(7, 1, 1, 0.98) 100%);
+  background-color: var(--backgroundColor);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.techstack::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background:
+    radial-gradient(circle at 20% 50%, rgba(255, 79, 79, 0.12) 0%, transparent 50%),
+    radial-gradient(circle at 80% 50%, rgba(255, 47, 59, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.techstack>* {
+  position: relative;
+  z-index: 1;
+}
+
+.techstack h2 {
+  font-size: 80px;
+  text-align: center;
+  position: absolute;
+  width: 100%;
+  top: 150px;
+  left: 0;
+  font-weight: 400;
+  text-transform: uppercase;
+  z-index: 3;
+  margin: 0;
+}
+
+@media screen and (min-width: 768px) {
+  body {
+    --cWidth: 94%;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .techstack h2 {
+    font-size: 40px;
+  }
+}

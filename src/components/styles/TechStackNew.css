@@ -1,0 +1,235 @@
+.techstack-new {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 100px 0;
+  background:
+    radial-gradient(circle at 6% 42%, rgba(255, 79, 79, 0.16) 0%, transparent 45%),
+    radial-gradient(circle at 90% 72%, rgba(255, 79, 79, 0.08) 0%, transparent 48%),
+    linear-gradient(180deg, #180202 0%, #2a0403 100%);
+}
+
+/* Video Background - playing in original high-definition red particles! */
+.techstack-video-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.techstack-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: hue-rotate(90deg) brightness(0.7) contrast(1.0) saturate(0.95);
+  opacity: 0.9; /* Fully visible and beautiful video backdrop */
+}
+
+/* Dark coral Overlay */
+.techstack-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background:
+    linear-gradient(180deg, rgba(24, 2, 2, 0.55) 0%, rgba(42, 4, 3, 0.65) 100%);
+  z-index: 1;
+}
+
+/* Top gradient fade - blends with Work section above */
+.techstack-video-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 150px;
+  background: linear-gradient(to bottom, var(--deepColor) 0%, transparent 100%);
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Bottom gradient fade - blends with Contact section below */
+.techstack-video-container::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 150px;
+  background: linear-gradient(to top, var(--deepColor) 0%, transparent 100%);
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Content */
+.techstack-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 30px;
+}
+
+.techstack-content h2 {
+  font-size: 70px;
+  text-align: center;
+  font-weight: 300;
+  text-transform: uppercase;
+  margin-bottom: 60px;
+  letter-spacing: 2px;
+  color: #fff;
+}
+
+.techstack-content h2 span {
+  color: var(--accentColor);
+  text-shadow: 0 0 20px rgba(255, 79, 79, 0.3);
+}
+
+/* Pyramid Layout */
+.techstack-pyramid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+}
+
+.techstack-row {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+/* Individual Tech Glass Item - Styled transparent using theme color! */
+.techstack-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 95px;
+  height: 110px;
+  border-radius: 16px;
+  background: rgba(255, 79, 79, 0.05);
+  border: 1px solid rgba(255, 79, 79, 0.15);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(15px) saturate(120%);
+  -webkit-backdrop-filter: blur(15px) saturate(120%);
+  transition: all 0.35s cubic-bezier(0.165, 0.84, 0.44, 1);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.techstack-item:hover {
+  transform: translateY(-8px) scale(1.08);
+  border-color: rgba(255, 79, 79, 0.6);
+  background: rgba(255, 79, 79, 0.16);
+  box-shadow: 0 15px 35px rgba(255, 79, 79, 0.12), 0 0 25px rgba(255, 79, 79, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.techstack-item img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  margin-bottom: 10px;
+  filter: grayscale(100%) brightness(0.85);
+  opacity: 0.7;
+  transition: all 0.35s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.techstack-item:hover img {
+  filter: none;
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+.techstack-item span {
+  font-size: 11px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.65);
+  text-align: center;
+  max-width: 90%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: color 0.3s ease;
+}
+
+.techstack-item:hover span {
+  color: #fff;
+  text-shadow: 0 0 10px rgba(255, 79, 79, 0.5);
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 1200px) {
+  .techstack-content {
+    max-width: 960px;
+  }
+  
+  .techstack-content h2 {
+    font-size: 55px;
+    margin-bottom: 45px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .techstack-content h2 {
+    font-size: 44px;
+    margin-bottom: 35px;
+  }
+  
+  .techstack-row {
+    gap: 12px;
+  }
+  
+  .techstack-item {
+    width: 85px;
+    height: 100px;
+    border-radius: 12px;
+  }
+  
+  .techstack-item img {
+    width: 28px;
+    height: 28px;
+    margin-bottom: 8px;
+  }
+  
+  .techstack-item span {
+    font-size: 10px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .techstack-content h2 {
+    font-size: 34px;
+  }
+  
+  .techstack-row {
+    gap: 8px;
+  }
+  
+  .techstack-item {
+    width: 74px;
+    height: 88px;
+  }
+  
+  .techstack-item img {
+    width: 24px;
+    height: 24px;
+    margin-bottom: 6px;
+  }
+  
+  .techstack-item span {
+    font-size: 9px;
+  }
+}
