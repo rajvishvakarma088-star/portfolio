@@ -1,22 +1,24 @@
-# My Portfolio Wesbite by @red1-for-hek - Overview 🚀
-Here is my 3d portfolio website. I am a developer/programmer/coder. You can use it as portfolio template.
-this contain AI, Machine Learning, Advance chess playing model too. Made by Python, HTML, CSS, JS, TS, React etc.
-If you are copying this code or forking this repo, please give a credit of my name :(
+# Raj Vishvakarma Portfolio
 
-## Instructions 🛠️
+3D portfolio website for Raj Vishvakarma, a Mobile Application Developer focused on Flutter, React Native, Kotlin, Firebase, REST APIs, and clean mobile app architecture.
 
-Go to www.redoyanulhaque.me/ and rate it :)
+## Tech Stack
 
-**Techstack** - React, TypeScript, GSAP, ThreeJS, WebGL, HTML, Css, JavaScript
+React, TypeScript, Vite, GSAP, Three.js, WebGL, Firebase-oriented portfolio content, and responsive CSS.
 
-- [Protfolio-Preview](https://www.redoyanulhaque.me/)
+## Local Development
+
+```bash
+npm install
+npm run dev
+```
+
+## Build
+
+```bash
+npm run build
+```
 
 ## License
 
 This project is open source and available under the [MIT License](LICENSE).
-
-<div>  <!-- ☕ BUY ME A COFFEE -->
-  <a href="https://buymeacoffee.com/redoyanul1y" target="_blank">
-    <img src="https://img.shields.io/badge/Buy%20Me%20A%20Coffee-FFDD00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black" alt="Buy Me A Coffee"/>
-  </a>
-</div>
