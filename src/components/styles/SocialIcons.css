@@ -53,26 +53,25 @@
   z-index: 99;
   display: flex;
   gap: 5px;
-  bottom: 40px;
-  right: 0;
+  bottom: 25px;
+  right: 25px;
   width: auto;
   text-wrap: nowrap;
-  letter-spacing: 4px;
-  font-size: 15px;
+  letter-spacing: 2px;
+  font-size: 13px;
   line-height: 15px;
   font-weight: 600;
-  color: #5e5e5e;
+  color: var(--accentColor);
   cursor: pointer;
-  transition: 0.5s;
-  transform-origin: left bottom;
-  transform: translateX(100%) rotateZ(-90deg);
+  transition: 0.3s;
 }
 .resume-button:hover {
   color: #fff;
+  transform: translateY(-2px);
 }
-div.resume-button span {
+.resume-button span {
   color: #fff;
-  font-size: 17px;
+  font-size: 15px;
   margin-top: -1px;
   display: flex;
   align-items: center;
@@ -95,14 +94,19 @@ div.resume-button span {
     font-size: 28px;
   }
 }
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 1025px) {
   .resume-button {
-    transform: none;
-    font-size: 20px;
-    line-height: 20px;
+    bottom: 40px;
+    right: 0;
+    font-size: 15px;
+    letter-spacing: 4px;
+    transform-origin: left bottom;
+    transform: translateX(100%) rotateZ(-90deg);
   }
-  div.resume-button span {
-    font-size: 23px;
-    margin-top: -1.5px;
+  .resume-button:hover {
+    transform: translateX(100%) rotateZ(-90deg) scale(1.05);
+  }
+  .resume-button span {
+    font-size: 17px;
   }
 }

@@ -11,7 +11,37 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function setSplitText() {
   ScrollTrigger.config({ ignoreMobileResize: true });
-  if (window.innerWidth < 900) return;
+  if (window.innerWidth < 900) {
+    const paras: NodeListOf<ParaElement> = document.querySelectorAll(".para");
+    const titles: NodeListOf<ParaElement> = document.querySelectorAll(".title");
+    paras.forEach((para: ParaElement) => {
+      if (para.anim) {
+        para.anim.progress(1).kill();
+        para.anim = undefined;
+      }
+      if (para.split) {
+        para.split.revert();
+        para.split = undefined;
+      }
+      para.style.opacity = "1";
+      para.style.visibility = "visible";
+      para.style.transform = "none";
+    });
+    titles.forEach((title: ParaElement) => {
+      if (title.anim) {
+        title.anim.progress(1).kill();
+        title.anim = undefined;
+      }
+      if (title.split) {
+        title.split.revert();
+        title.split = undefined;
+      }
+      title.style.opacity = "1";
+      title.style.visibility = "visible";
+      title.style.transform = "none";
+    });
+    return;
+  }
   const paras: NodeListOf<ParaElement> = document.querySelectorAll(".para");
   const titles: NodeListOf<ParaElement> = document.querySelectorAll(".title");
 

@@ -280,6 +280,10 @@
   .career-container {
     width: calc(100% - 25px);
   }
+
+  .career-info h4 {
+    width: auto !important;
+  }
 }
 
 @media only screen and (max-width: 600px) {

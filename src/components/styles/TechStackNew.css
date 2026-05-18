@@ -183,6 +183,10 @@
 }
 
 @media screen and (max-width: 768px) {
+  .techstack-content {
+    padding: 0 15px !important;
+  }
+
   .techstack-content h2 {
     font-size: 44px;
     margin-bottom: 35px;
@@ -210,6 +214,10 @@
 }
 
 @media screen and (max-width: 480px) {
+  .techstack-content {
+    padding: 0 10px !important;
+  }
+
   .techstack-content h2 {
     font-size: 34px;
   }

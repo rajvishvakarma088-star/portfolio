@@ -102,3 +102,33 @@
     line-height: 2.7rem;
   }
 }
+
+@media only screen and (max-width: 768px) {
+  .about-section {
+    height: auto !important;
+    padding: 60px 15px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: start !important;
+    justify-content: start !important;
+    opacity: 1 !important;
+  }
+  .about-me {
+    padding: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    transform: none !important;
+  }
+  .about-me h3 {
+    font-size: 16px !important;
+    letter-spacing: 3px !important;
+    margin-bottom: 12px !important;
+    color: var(--accentColor) !important;
+  }
+  .about-me p {
+    font-size: 18px !important;
+    line-height: 24px !important;
+    word-spacing: 1px !important;
+    color: #ffffff !important;
+  }
+}

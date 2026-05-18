@@ -75,12 +75,17 @@ const SocialIcons = () => {
           </span>
         ))}
       </div>
-      <a className="resume-button" href={config.contact.resume} target="_blank" rel="noopener noreferrer">
+      <span
+        className="resume-button"
+        onClick={() => window.open(config.contact.resume, "_blank")}
+        role="button"
+        tabIndex={0}
+      >
         <HoverLinks text="RESUME" />
         <span>
           <TbNotes />
         </span>
-      </a>
+      </span>
     </div>
   );
 };
