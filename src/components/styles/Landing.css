@@ -11,27 +11,30 @@
 
   .character-model {
     display: block !important;
-    position: absolute !important;
-    height: 55vh !important;
+    position: fixed !important;
+    height: 75vh !important;
     width: 100vw !important;
     left: 50% !important;
     transform: translateX(-50%) !important;
     z-index: 1 !important;
-    bottom: 0px !important; /* Flush at the bottom of the landing section to remove empty gaps */
-    pointer-events: auto !important;
+    bottom: 0px !important;
+    /* Flush at the bottom of the landing section to remove empty gaps */
+    pointer-events: none !important;
   }
 
   .landing-section,
   .landing-container {
     height: auto !important;
-    min-height: 90vh !important; /* SNUG 90vh layout to keep text, character, and scroll indicator together */
+    min-height: 90vh !important;
+    /* SNUG 90vh layout to keep text, character, and scroll indicator together */
     max-width: 100vw;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
     padding: 0 15px;
     padding-top: 10px !important;
-    padding-bottom: 0px !important; /* No empty gap at the bottom */
+    padding-bottom: 0px !important;
+    /* No empty gap at the bottom */
   }
 
   /* Fix spacing between name and subtitle */
@@ -111,7 +114,8 @@
     margin: 0 !important;
     text-align: center !important;
     height: 32px !important;
-    overflow: hidden !important; /* Crop characters cleanly during vertical slide transitions */
+    overflow: hidden !important;
+    /* Crop characters cleanly during vertical slide transitions */
   }
 
   .landing-h2-1,
@@ -181,7 +185,7 @@
 .landing-circle1 {
   top: 0%;
   left: 0%;
-  z-index: 15;
+  z-index: -1;
   position: fixed;
   width: 300px;
   height: 300px;
@@ -220,7 +224,7 @@
   top: 50%;
   right: 0%;
   transform: translate(calc(100% - 2px), -50%);
-  z-index: 9;
+  z-index: -1;
   position: fixed;
   display: none;
   width: 300px;
@@ -379,8 +383,10 @@
 
 .landing-info h2 {
   margin: 0;
-  margin-top: 15px; /* Clean spacing to prevent overlap */
-  margin-left: 10px; /* Aligned left */
+  margin-top: 15px;
+  /* Clean spacing to prevent overlap */
+  margin-left: 10px;
+  /* Aligned left */
   font-family: "Geist", sans-serif;
   font-weight: 600;
   font-size: 28px;
@@ -412,7 +418,8 @@ h2.landing-info-h2 {
   font-family: "Geist", sans-serif;
   font-weight: 600;
   position: relative;
-  margin-left: -4px; /* Aligned left */
+  margin-left: -4px;
+  /* Aligned left */
 }
 
 .landing-h2-2 {
@@ -433,7 +440,8 @@ h2.landing-info-h2 {
       rgba(0, 0, 0, 0) 110%);
   top: 0;
   left: 0;
-  display: none; /* Disabled gradient overlay to keep text fully visible */
+  display: none;
+  /* Disabled gradient overlay to keep text fully visible */
 }
 
 @media screen and (min-width: 500px) {
@@ -523,7 +531,8 @@ h2.landing-info-h2 {
     text-align: left;
     transform: translate(0%, -50%);
     right: auto;
-    left: 65%; /* Shifted left to ensure text never clips on right edge */
+    left: 65%;
+    /* Shifted left to ensure text never clips on right edge */
   }
 }
 
@@ -542,7 +551,8 @@ h2.landing-info-h2 {
     text-align: left;
     transform: translate(0%, -50%);
     right: auto;
-    left: 67%; /* Shifted left to ensure text never clips on right edge */
+    left: 67%;
+    /* Shifted left to ensure text never clips on right edge */
   }
 }
 
@@ -567,5 +577,17 @@ h2.landing-info-h2 {
 
   h2.landing-info-h2 {
     font-size: 65px;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .character-model {
+    position: fixed !important;
+    pointer-events: none !important;
+  }
+
+  .character-model::after,
+  .character-model::before {
+    display: none !important;
   }
 }

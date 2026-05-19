@@ -7,12 +7,14 @@
   position: relative;
   opacity: 1;
   height: auto;
-  margin: 0 auto; /* Removed the 250px margin gap completely to make it continuous */
+  margin: 0 auto;
+  /* Removed the 250px margin gap completely to make it continuous */
   padding: 120px 0px;
   background:
     radial-gradient(circle at 0% 50%, rgba(255, 79, 79, 0.08) 0%, transparent 45%),
     radial-gradient(circle at 100% 22%, rgba(255, 79, 79, 0.12) 0%, transparent 45%),
-    linear-gradient(180deg, #250302 0%, #180202 100%); /* Seamless gradient flow into Work section top (#180202) */
+    linear-gradient(180deg, #250302 0%, #180202 100%);
+  /* Seamless gradient flow into Work section top (#180202) */
   width: 100%;
 }
 
@@ -62,9 +64,12 @@
   justify-content: space-between;
   margin-bottom: 50px;
   padding: 35px 40px;
-  border-radius: 30px; /* Premium highly rounded corners! */
-  border: 1px solid rgba(255, 79, 79, 0.12); /* Subtle glowing coral border */
-  background: linear-gradient(135deg, rgba(255, 79, 79, 0.05) 0%, rgba(255, 79, 79, 0.01) 100%); /* Semi-transparent coral glass */
+  border-radius: 30px;
+  /* Premium highly rounded corners! */
+  border: 1px solid rgba(255, 79, 79, 0.12);
+  /* Subtle glowing coral border */
+  background: linear-gradient(135deg, rgba(255, 79, 79, 0.05) 0%, rgba(255, 79, 79, 0.01) 100%);
+  /* Semi-transparent coral glass */
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.03);
   backdrop-filter: blur(20px) saturate(120%);
   -webkit-backdrop-filter: blur(20px) saturate(120%);
@@ -72,9 +77,12 @@
 }
 
 .career-info-box:hover {
-  transform: translateY(-8px) scale(1.015); /* Sleek vertical float-up on hover */
-  background: rgba(255, 79, 79, 0.08); /* Slightly lighter on hover */
-  border-color: rgba(255, 79, 79, 0.45); /* Glowing red boundary on hover */
+  transform: translateY(-8px) scale(1.015);
+  /* Sleek vertical float-up on hover */
+  background: rgba(255, 79, 79, 0.08);
+  /* Slightly lighter on hover */
+  border-color: rgba(255, 79, 79, 0.45);
+  /* Glowing red boundary on hover */
   box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4), 0 0 30px rgba(255, 79, 79, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.06);
 }
 
@@ -86,7 +94,8 @@
   margin: 0;
   line-height: 20px;
   color: rgba(255, 255, 255, 0.7);
-  padding-left: 35px; /* Symmetrical clearance gap for the timeline! */
+  padding-left: 35px;
+  /* Symmetrical clearance gap for the timeline! */
   box-sizing: border-box;
 }
 
@@ -96,7 +105,8 @@
   width: 42%;
   justify-content: space-between;
   gap: 20px;
-  padding-right: 35px; /* Symmetrical clearance gap for the timeline! */
+  padding-right: 35px;
+  /* Symmetrical clearance gap for the timeline! */
   box-sizing: border-box;
 }
 
@@ -138,7 +148,8 @@
       var(--accentColor) 50%,
       transparent 95%);
   max-height: 0%;
-  border-radius: 10px; /* Smooth rounded capsule ends instead of sharp corners */
+  border-radius: 10px;
+  /* Smooth rounded capsule ends instead of sharp corners */
 }
 
 .career-dot {
@@ -156,6 +167,7 @@
 }
 
 @keyframes timeline {
+
   10%,
   20%,
   50%,
@@ -268,7 +280,8 @@
   .career-info-in,
   .career-info-box p {
     width: 100%;
-    padding-left: 45px; /* Symmetrical left clearance for timeline on mobile */
+    padding-left: 45px;
+    /* Symmetrical left clearance for timeline on mobile */
     padding-right: 0;
     box-sizing: border-box;
   }

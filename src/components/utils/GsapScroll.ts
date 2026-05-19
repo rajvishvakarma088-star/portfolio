@@ -10,6 +10,7 @@ export function setCharTimeline(
   setInterval(() => {
     intensity = Math.random();
   }, 200);
+  const isMobile = window.innerWidth <= 1024;
   const tl1 = gsap.timeline({
     scrollTrigger: {
       trigger: ".landing-section",
@@ -22,7 +23,7 @@ export function setCharTimeline(
   const tl2 = gsap.timeline({
     scrollTrigger: {
       trigger: ".about-section",
-      start: "center 55%",
+      start: isMobile ? "top bottom" : "center 55%",
       end: "bottom top",
       scrub: true,
       invalidateOnRefresh: true,
@@ -65,7 +66,6 @@ export function setCharTimeline(
   });
   let neckBone = character?.getObjectByName("spine005");
   if (character) {
-    const isMobile = window.innerWidth <= 1024;
     const charXDest = isMobile ? "0%" : "-25%";
     const charXDest2 = isMobile ? "0%" : "-12%";
     const aboutYStart = isMobile ? "0%" : "-50%";
@@ -83,45 +83,47 @@ export function setCharTimeline(
     tl2
       .to(
         camera.position,
-        { z: isMobile ? 55 : 75, y: isMobile ? 6 : 8.4, duration: 6, delay: 2, ease: "power3.inOut" },
+        { z: isMobile ? 85 : 75, y: isMobile ? 7.5 : 8.4, duration: isMobile ? 3 : 6, delay: isMobile ? 1 : 2, ease: "power3.inOut" },
         0
       )
-      .to(".about-section", { y: aboutYDest, duration: 6 }, 0)
-      .to(".about-section", { opacity: isMobile ? 1 : 0, delay: 3, duration: 2 }, 0)
+      .to(".about-section", { y: aboutYDest, duration: isMobile ? 3 : 6 }, 0)
+      .to(".about-section", { opacity: isMobile ? 1 : 0, delay: isMobile ? 1.5 : 3, duration: isMobile ? 1 : 2 }, 0)
+      .to(".character-model", { opacity: isMobile ? 0 : 1, duration: isMobile ? 2 : 0, delay: isMobile ? 6 : 0 }, 0)
+      .to(".character-model", { y: isMobile ? "20%" : "0%", duration: isMobile ? 3 : 6 }, 0)
       .fromTo(
         ".character-model",
         { pointerEvents: "inherit" },
-        { pointerEvents: "none", x: charXDest2, delay: 2, duration: 5 },
+        { pointerEvents: "none", x: charXDest2, delay: isMobile ? 1 : 2, duration: isMobile ? 2.5 : 5 },
         0
       )
-      .to(character.rotation, { y: 0.92, x: 0.12, delay: 3, duration: 3 }, 0)
-      .to(neckBone!.rotation, { x: 0.6, delay: 2, duration: 3 }, 0)
-      .to(monitor.material, { opacity: 1, duration: 0.8, delay: 3.2 }, 0)
-      .to(screenLight.material, { opacity: 1, duration: 0.8, delay: 4.5 }, 0)
+      .to(character.rotation, { y: 0.92, x: 0.12, delay: isMobile ? 1.5 : 3, duration: isMobile ? 1.5 : 3 }, 0)
+      .to(neckBone!.rotation, { x: 0.6, delay: isMobile ? 1 : 2, duration: isMobile ? 1.5 : 3 }, 0)
+      .to(monitor.material, { opacity: 1, duration: isMobile ? 0.4 : 0.8, delay: isMobile ? 1.6 : 3.2 }, 0)
+      .to(screenLight.material, { opacity: 1, duration: isMobile ? 0.4 : 0.8, delay: isMobile ? 2.25 : 4.5 }, 0)
       .fromTo(
         ".what-box-in",
         { display: isMobile ? "flex" : "none" },
-        { display: "flex", duration: 0.1, delay: 6 },
+        { display: "flex", duration: 0.1, delay: isMobile ? 3 : 6 },
         0
       )
       .fromTo(
         monitor.position,
         { y: -10, z: 2 },
-        { y: 0, z: 0, delay: 1.5, duration: 3 },
+        { y: 0, z: 0, delay: isMobile ? 0.75 : 1.5, duration: isMobile ? 1.5 : 3 },
         0
       )
       .fromTo(
         ".character-rim",
         { opacity: 1, scaleX: 1.4 },
-        { opacity: 0, scale: 0, y: "-70%", duration: 5, delay: 2 },
+        { opacity: 0, scale: 0, y: "-70%", duration: isMobile ? 2.5 : 5, delay: isMobile ? 1 : 2 },
         0.3
       );
 
     tl3
       .fromTo(
         ".character-model",
-        { y: "0%" },
-        { y: isMobile ? "0%" : "-100%", duration: 4, ease: "none", delay: 1 },
+        { y: isMobile ? "20%" : "0%" },
+        { y: "-100%", duration: 4, ease: "none", delay: 1 },
         0
       )
       .fromTo(".whatIDO", { y: 0 }, { y: whatYDest, duration: 2 }, 0)
