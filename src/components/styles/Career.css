@@ -264,7 +264,7 @@
   }
 }
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 1024px) {
   .career-info-box {
     flex-direction: column;
     gap: 15px;

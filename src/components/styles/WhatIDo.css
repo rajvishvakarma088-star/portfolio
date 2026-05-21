@@ -333,41 +333,6 @@
 
 @media only screen and (max-width: 1024px) {
   .whatIDO {
-    height: auto;
-    padding: 50px 0px;
-    padding-bottom: 50px;
-  }
-
-  .what-box-in {
-    height: 500px;
-    margin-left: -50px;
-  }
-
-  .what-content {
-    padding: 50px;
-    width: 500px;
-  }
-
-  .what-content p {
-    font-size: 14px;
-  }
-
-  .what-noTouch:hover,
-  .what-content-active {
-    min-height: 67%;
-    padding: 50px;
-  }
-
-  .what-noTouch:hover~.what-content,
-  .what-box-in:hover .what-noTouch:not(:hover),
-  .what-content.what-sibling {
-    min-height: 33%;
-    padding: 10px 50px;
-  }
-}
-
-@media only screen and (max-width: 900px) {
-  .whatIDO {
     height: auto !important;
     flex-direction: column !important;
     padding: 60px 0px !important;

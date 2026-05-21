@@ -4,7 +4,7 @@
 }
 
 /* Position the 3D character model beautifully on mobile */
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1024px) {
   .character-container {
     display: block !important;
   }
