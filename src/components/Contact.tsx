@@ -27,6 +27,11 @@ const Contact = () => {
   };
 
   useEffect(() => {
+    if (window.innerWidth <= 1024) {
+      gsap.set(".contact-header, .contact-card", { opacity: 1, y: 0 });
+      return;
+    }
+
     const contactTimeline = gsap.timeline({
       scrollTrigger: {
         trigger: ".contact-section",
@@ -47,7 +52,7 @@ const Contact = () => {
         opacity: 1,
         y: 0,
         duration: 0.8,
-        ease: "power3.out",
+        ease: "power2.out",
       }
     );
 
@@ -63,7 +68,7 @@ const Contact = () => {
         y: 0,
         duration: 0.6,
         stagger: 0.15,
-        ease: "power3.out",
+        ease: "power2.out",
       },
       "-=0.4"
     );

@@ -33,7 +33,14 @@ const setCharacter = (
                 const mesh = child as THREE.Mesh;
                 child.castShadow = false;
                 child.receiveShadow = false;
-                mesh.frustumCulled = true;
+                
+                // Disable frustum culling on SkinnedMesh or eyebrow elements to prevent them from disappearing during bone movement
+                if (child.isSkinnedMesh || child.name.toLowerCase().includes("eyebrow")) {
+                  mesh.frustumCulled = false;
+                } else {
+                  mesh.frustumCulled = true;
+                }
+
                 if (mesh.material && !Array.isArray(mesh.material)) {
                   (mesh.material as THREE.ShaderMaterial).precision = 'mediump';
                 }

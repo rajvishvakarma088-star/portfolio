@@ -107,8 +107,34 @@ const Scene = () => {
         landingDiv.addEventListener("touchstart", onTouchStart);
         landingDiv.addEventListener("touchend", onTouchEnd);
       }
+
+      let isVisible = true;
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            isVisible = entry.isIntersecting;
+          });
+        },
+        { rootMargin: "300px" } // Use rootMargin to prevent false off-screen culling on load or minor shifts
+      );
+      if (canvasDiv.current) {
+        observer.observe(canvasDiv.current);
+      }
+
+      let framesAfterVisible = 0;
       const animate = () => {
         requestAnimationFrame(animate);
+        const delta = clock.getDelta();
+        
+        // Always render for the first 180 frames (approx. 3 seconds) to allow the GLTF model
+        // to complete its intro animation and settle into its correct idle pose (including eyebrows).
+        const shouldRender = isVisible || framesAfterVisible < 180;
+        if (!shouldRender) return;
+
+        if (framesAfterVisible < 180) {
+          framesAfterVisible++;
+        }
+
         if (headBone) {
           handleHeadRotation(
             headBone,
@@ -120,7 +146,6 @@ const Scene = () => {
           );
           light.setPointLight(screenLight);
         }
-        const delta = clock.getDelta();
         if (mixer) {
           mixer.update(delta);
         }
@@ -128,6 +153,7 @@ const Scene = () => {
       };
       animate();
       return () => {
+        observer.disconnect();
         clearTimeout(debounce);
         scene.clear();
         renderer.dispose();

@@ -74,6 +74,22 @@ body {
     position: static !important;
     height: auto !important;
   }
+
+  /* Optimize rendering performance and scrolling speed on mobile/tablet */
+  .work-box,
+  .contact-card,
+  .contact-header,
+  .career-info-box,
+  .what-content,
+  .techstack-item,
+  .cta-btn-play {
+    backdrop-filter: blur(6px) saturate(120%) !important;
+    -webkit-backdrop-filter: blur(6px) saturate(120%) !important;
+    will-change: transform, opacity;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    transform: translateZ(0);
+  }
 }
 
 a {
